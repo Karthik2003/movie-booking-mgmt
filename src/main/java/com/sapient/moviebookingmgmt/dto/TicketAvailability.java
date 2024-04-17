@@ -6,6 +6,6 @@ public class TicketAvailability {
     private Integer screenId;
     private String screenName;
     private Integer totalCapacity;
-    private Integer seatsBooked;
-    private Integer seatsAvailable;
+    private Integer seatsBooked = 0;
+    private Integer seatsAvailable = 0;
 }

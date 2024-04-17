@@ -12,9 +12,4 @@ public class Screen {
     private Integer rows;
     private Integer columns;
     private Integer capacity;
-
-    private Integer screenId;
-    private String screenName;
-    private Integer totalCapacity;
-    private Integer seatsBooked;
 }

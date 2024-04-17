@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -16,6 +17,7 @@ import java.util.List;
 public class ScreenService {
     @Autowired
     private ScreenRepository screenRepository;
+
     public void saveAll(List<Screen> screenList) {
         log.info("------ persisting all  screen data -----");
         screenRepository.saveAll(screenList);
@@ -25,7 +27,11 @@ public class ScreenService {
         return screenRepository.findAll();
     }
 
-    public Mono<TicketAvailability> checkAvailability(String screenId) {
-        return screenRepository.checkAvailability(screenId);
+    public Mono<TicketAvailability> checkAvailability(String screenId, String date) {
+        return screenRepository.checkAvailability(Integer.parseInt(screenId), LocalDate.parse(date));
+    }
+
+    public void bookSeats(String screenId, String date, String seats) {
+        screenRepository.bookSeats(Integer.parseInt(screenId), LocalDate.parse(date), Integer.parseInt(seats));
     }
 }
