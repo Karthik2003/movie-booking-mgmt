@@ -23,5 +23,8 @@ public class BookingController {
     public Mono<Booking> updateSeatsById(@PathVariable("id") String bookingId, @PathVariable("seats") String seats) {
         return bookingService.updateSeatsById(bookingId, seats);
     }
-
+    @DeleteMapping("/{id}")
+    public Mono<Booking> deleteById(@PathVariable("id") String bookingId) {
+        return bookingService.deleteById(bookingId);
+    }
 }

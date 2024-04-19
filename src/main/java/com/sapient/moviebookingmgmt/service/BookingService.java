@@ -32,4 +32,11 @@ public class BookingService {
             return bookingRepository.save(bookRepo);
         });
     }
+
+    public Mono<Booking> deleteById(String bookingId) {
+        return bookingRepository.findById(Integer.parseInt(bookingId)).flatMap(bookRepo -> {
+            bookRepo.setActive(false);
+            return bookingRepository.save(bookRepo);
+        });
+    }
 }
