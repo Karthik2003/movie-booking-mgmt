@@ -17,24 +17,6 @@ public class MovieBookingMgmtApplication {
         SpringApplication.run(MovieBookingMgmtApplication.class, args);
         log.info("...................Started Movie Booking Mgmt Service.....................");
     }
-
-//    @Bean
-//    CommandLineRunner commandLineRunner(ScreenService screenService){
-//        return args -> {
-//            ObjectMapper mapper = new ObjectMapper();
-//            TypeReference<List<Screen>> typeReference = new TypeReference<List<Screen>>(){};
-//            InputStream inputStream = TypeReference.class.getResourceAsStream("/data/screens_master.json");
-//            try {
-//                List<Screen> screenList = mapper.readValue(inputStream,typeReference);
-//                screenService.saveAll(screenList);
-//                log.info("------ data persisted completed --------");
-//            } catch (Exception e){
-//                log.error("----- data persistence failed ------");
-//                throw new IOException(e.getMessage());
-//            }
-//        };
-//    }
-
     @Bean
     ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
 

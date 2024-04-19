@@ -2,6 +2,7 @@ package com.sapient.moviebookingmgmt.service;
 
 import com.sapient.moviebookingmgmt.dto.Screen;
 import com.sapient.moviebookingmgmt.dto.TicketAvailability;
+import com.sapient.moviebookingmgmt.repository.BookingRepository;
 import com.sapient.moviebookingmgmt.repository.ScreenRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class ScreenService {
     @Autowired
     private ScreenRepository screenRepository;
 
+    @Autowired
+    private BookingRepository bookingRepository;
     public void saveAll(List<Screen> screenList) {
         log.info("------ persisting all  screen data -----");
         screenRepository.saveAll(screenList);
@@ -29,9 +32,5 @@ public class ScreenService {
 
     public Mono<TicketAvailability> checkAvailability(String screenId, String date) {
         return screenRepository.checkAvailability(Integer.parseInt(screenId), LocalDate.parse(date));
-    }
-
-    public void bookSeats(String screenId, String date, String seats) {
-        screenRepository.bookSeats(Integer.parseInt(screenId), LocalDate.parse(date), Integer.parseInt(seats));
     }
 }

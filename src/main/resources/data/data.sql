@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS screen (id INT NOT NULL, name VARCHAR(255), area VARCHAR(255), city VARCHAR(255), rows INT, columns INT, capacity INT, PRIMARY KEY (id));
-CREATE TABLE IF NOT EXISTS booking (id INT NOT NULL, screenId INT NOT NULL, date DATE, seatsBooked INT NOT NULL, bookingActive BOOLEAN, PRIMARY KEY (id), FOREIGN KEY (screenId) REFERENCES screen(id));
+CREATE SEQUENCE "BOOKING_SEQ" MINVALUE 1 MAXVALUE 999999999 INCREMENT BY 1 START WITH 90001 NOCACHE NOCYCLE;
+CREATE TABLE IF NOT EXISTS booking (id BIGINT NOT NULL DEFAULT NEXT VALUE FOR BOOKING_SEQ, screenId INT NOT NULL, date DATE, seatsBooked INT NOT NULL, active BOOLEAN, PRIMARY KEY (id), FOREIGN KEY (screenId) REFERENCES screen(id));
 INSERT INTO `screen` (`id`,`name`,`area`,`city`,`rows`,`columns`,`capacity`)
 VALUES
 (50001,'PVR','T Nagar','Chennai',8,10,80),
@@ -17,11 +18,11 @@ VALUES
 (50013,'Sangam Cinemas','Nungambakkam','Chennai',10,9,90),
 (50014,'Sangam Cinemas','Nungambakkam','Chennai',8,10,80),
 (50015,'Gopalan Cinemas','Brookfields','Bengaluru',9,10,90);
-INSERT INTO `booking` (`id`,`screenId`,`date`,`seatsBooked`,`bookingActive`)
+INSERT INTO `booking` (`screenId`,`date`,`seatsBooked`,`active`)
 VALUES
-(90001,'50001','2024-04-14',8,true),
-(90002,'50001','2024-04-14',10,true),
-(90003,'50001','2024-04-14',22,true),
-(90004,'50001','2024-04-14',8,false),
-(90005,'50001','2024-04-14',8,true),
-(90006,'50001','2024-04-14',10,true);
+('50001','2024-04-14',8,true),
+('50001','2024-04-14',10,true),
+('50001','2024-04-14',22,true),
+('50001','2024-04-14',8,false),
+('50001','2024-04-14',8,true),
+('50001','2024-04-14',10,true);

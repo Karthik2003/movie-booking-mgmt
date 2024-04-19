@@ -19,11 +19,13 @@ public class ScreenController {
     }
     @GetMapping("/checkAvailability/{id}/{date}")
     public Mono<TicketAvailability> checkAvailability(@PathVariable("id") String screenId, @PathVariable("date") String date) {
-        return screenService.checkAvailability(screenId, date);
-    }
-    @PostMapping("/book/{id}/{date}/{seats}")
-    public void bookSeats(@PathVariable("id") String screenId, @PathVariable("date") String date, @PathVariable("seats") String seats) {
-        screenService.bookSeats(screenId, date, seats);
-    }
+        Mono<TicketAvailability> mono = screenService.checkAvailability(screenId, date);
+        mono.subscribe(ticketAvailability -> {
+            if(ticketAvailability.getSeatsAvailable() == 0) {
+                ticketAvailability.setSeatsAvailable(ticketAvailability.getTotalCapacity());
+            }
+        });
 
+        return mono;
+    }
 }
