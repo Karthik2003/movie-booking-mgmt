@@ -1,6 +1,7 @@
 package com.sapient.moviebookingmgmt.service;
 
 import com.sapient.moviebookingmgmt.entity.Booking;
+import com.sapient.moviebookingmgmt.exception.BookingException;
 import com.sapient.moviebookingmgmt.repository.BookingRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,9 @@ public class BookingService {
     private BookingRepository bookingRepository;
 
     public Mono<Booking> getBookingDetailsById(String bookingId) {
-        return bookingRepository.findById(Integer.parseInt(bookingId));
+        return bookingRepository.findById(Integer.parseInt(bookingId))
+                .onErrorResume(throwable -> Mono.error
+                        (new BookingException(String.format("Booking ID %s not found", bookingId))));
     }
     public Mono<Integer> bookSeats(String screenId, String date, String seats) {
         Booking booking = new Booking();

@@ -17,10 +17,10 @@ public class ScreenSearchController {
     public Iterable<Screens> saveAllScreens(@RequestBody  Iterable<Screens> screens) {
         return screenSearchService.saveAllScreens(screens);
     }
-    @GetMapping("/findAll")
-    public Iterable<Screens> findAll() {
-        return screenSearchService.getScreens();
-    }
+//    @GetMapping("/findAll")
+//    public Iterable<Screens> findAll() {
+//        return screenSearchService.getScreens();
+//    }
     @PostMapping(value="/search")
     public Iterable<Screens> searchResult(@RequestBody JsonNode searchInput) {
 
