@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "aa8a3fe7-ca4f-44fd-884f-1949e34c1665",
+		"name": "Movie_Mgmt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "398096",
+		"_collection_link": "https://gold-escape-64031.postman.co/workspace/414d0b70-6ee9-4020-8dc4-0d16acad6cae/collection/398096-aa8a3fe7-ca4f-44fd-884f-1949e34c1665?action=share&source=collection_link&creator=398096"
+	},
+	"item": [
+		{
+			"name": "ElasticSearch call",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/screens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"screens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save all Show details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"screenId\": 50001,\r\n        \"screenName\": \"PVR\",\r\n        \"area\": \"T Nagar\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Jaws\",\r\n        \"movieTime\": \"EVENING\"\r\n    },\r\n    {\r\n        \"screenId\": 50002,\r\n        \"screenName\": \"AGS\",\r\n        \"area\": \"KK Nagar\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Titanic\",\r\n        \"movieTime\": \"NIGHT\"\r\n    },\r\n    {\r\n        \"screenId\": 50003,\r\n        \"screenName\": \"PVR\",\r\n        \"area\": \"Haralur\",\r\n        \"city\": \"Bengaluru\",\r\n        \"movieName\": \"Jaws\",\r\n        \"movieTime\": \"EVENING\"\r\n    },\r\n    {\r\n        \"screenId\": 50004,\r\n        \"screenName\": \"Sathyam Cinemas\",\r\n        \"area\": \"T Nagar\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Jaws\",\r\n        \"movieTime\": \"EVENING\"\r\n    },\r\n    {\r\n        \"screenId\": 50005,\r\n        \"screenName\": \"AGS\",\r\n        \"area\": \"KK Nagar\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Heat\",\r\n        \"movieTime\": \"MORNING\"\r\n    },\r\n    {\r\n        \"screenId\": 50006,\r\n        \"screenName\": \"Urvashi Cinemas\",\r\n        \"area\": \"Coxtown\",\r\n        \"city\": \"Bengaluru\",\r\n        \"movieName\": \"Jaws\",\r\n        \"movieTime\": \"EVENING\"\r\n    },\r\n    {\r\n        \"screenId\": 50007,\r\n        \"screenName\": \"Lido\",\r\n        \"area\": \"Ulsoor\",\r\n        \"city\": \"Bengaluru\",\r\n        \"movieName\": \"Titanic\",\r\n        \"movieTime\": \"MORNING\"\r\n    },\r\n    {\r\n        \"screenId\": 50008,\r\n        \"screenName\": \"Lido\",\r\n        \"area\": \"Ulsoor\",\r\n        \"city\": \"Bengaluru\",\r\n        \"movieName\": \"Titanic\",\r\n        \"movieTime\": \"AFTERNOON\"\r\n    },\r\n    {\r\n        \"screenId\": 50009,\r\n        \"screenName\": \"Lido\",\r\n        \"area\": \"Ulsoor\",\r\n        \"city\": \"Bengaluru\",\r\n        \"movieName\": \"Titanic\",\r\n        \"movieTime\": \"EVENING\"\r\n    },\r\n    {\r\n        \"screenId\": 50010,\r\n        \"screenName\": \"Lido\",\r\n        \"area\": \"Ulsoor\",\r\n        \"city\": \"Bengaluru\",\r\n        \"movieName\": \"Titanic\",\r\n        \"movieTime\": \"NIGHT\"\r\n    },\r\n    {\r\n        \"screenId\": 50011,\r\n        \"screenName\": \"Sangam Cinemas\",\r\n        \"area\": \"Nungambakkam\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Tenet\",\r\n        \"movieTime\": \"NIGHT\"\r\n    },\r\n    {\r\n        \"screenId\": 50012,\r\n        \"screenName\": \"Sangam Cinemas\",\r\n        \"area\": \"Nungambakkam\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Alien\",\r\n        \"movieTime\": \"MORNING\"\r\n    },\r\n    {\r\n        \"screenId\": 50013,\r\n        \"screenName\": \"Sangam Cinemas\",\r\n        \"area\": \"Nungambakkam\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Alien\",\r\n        \"movieTime\": \"AFTERNOON\"\r\n    },\r\n    {\r\n        \"screenId\": 50014,\r\n        \"screenName\": \"Sangam Cinemas\",\r\n        \"area\": \"Nungambakkam\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Alien\",\r\n        \"movieTime\": \"EVENING\"\r\n    },\r\n    {\r\n        \"screenId\": 50015,\r\n        \"screenName\": \"Gopalan Cinemas\",\r\n        \"area\": \"Brookfields\",\r\n        \"city\": \"Bengaluru\",\r\n        \"movieName\": \"Alien\",\r\n        \"movieTime\": \"EVENING\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/screens/saveAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"screens",
+						"saveAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search call",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"screenName\": \"\",\r\n        \"area\": \"T Nagar\",\r\n        \"city\": \"Chennai\",\r\n        \"movieName\": \"Jaws\",\r\n        \"movieTime\": \"EVENING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/screens/search",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"screens",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ticket availability/inventory check call",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/screen/checkAvailability/50001/2024-04-14",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"screen",
+						"checkAvailability",
+						"50001",
+						"2024-04-14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/book/50004/2024-04-14/10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"book",
+						"50004",
+						"2024-04-14",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get booking details by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/book/90007",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"book",
+						"90007"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update booking by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/book/90007/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"book",
+						"90007",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete/Cancel booking by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/book/90007",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"book",
+						"90007"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
